@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './../styles/App.css';
 import io from 'socket.io-client';
 import Chat from './Chat';
+import Login from './Login';
 
 const socket = io.connect("http://localhost:3001");
 
@@ -19,22 +20,22 @@ function App() {
 
   return (
     <div className="App-container">
-       <h2>Lets Rock the Final!
-      <span style={{fontSize:"30px"}}> &#128512; </span>
-      Yeah!
-      </h2> 
-      <br />
+      <header>
+        <h2 style={{textAlign:"center"}}>Lets Rock the Final!
+        <span style={{fontSize:"30px"}}> &#128512; </span>
+        Yeah!
+        </h2> 
+      </header>
 
-      {!showChat ? 
-        ( <div className="join-chat-container">
-            <h3>Join a Chat</h3>
-            <input type="text" placeholder="Name.." onChange={(event) => setUsername(event.target.value)}/>
-            <input type="text" placeholder="Room ID.." onChange={(event) => setRoom(event.target.value)}/>
-            <button onClick={joinRoom}>Join a Room</button>
-        </div>
-        ) 
-        : ( <Chat socket={socket} username={username} room={room} /> )
-      }
+      {!showChat && 
+      <Login 
+        setUsername={setUsername}
+        setRoom={setRoom}
+        joinRoom={joinRoom}
+      /> }   
+
+      {showChat && <Chat socket={socket} username={username} room={room} />}
+      
     </div>
   )
 }

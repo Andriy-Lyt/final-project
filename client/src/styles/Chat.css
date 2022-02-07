@@ -1,7 +1,7 @@
 .chat-container {
   min-height: 400px;
   max-height: 500px;
-  overflow-y: scroll ;
+  width:100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -9,14 +9,21 @@
   border: 1px solid var(--lblue);
   border-radius: 5px;
 }
+.chat-header {
+  width: 100%;
+  padding: 0 10px 0 12px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--lblue);
+}
 .chat-body {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
+  overflow-y: scroll ;
   display: flex;
   flex-flow: column nowrap;
   flex-grow: 1;
-  /* height: 100%; */
-  width: 98%;
-  padding: 7px;
+  width: 100%;
+  padding: 5px 8px;
   margin-bottom: 10px; 
 }
 .message-div {

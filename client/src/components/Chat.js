@@ -42,6 +42,7 @@ function Chat({socket, username, room}) {
     <section className="chat-container">
       <div className="chat-header">
         <h3>Live Chat Support</h3>
+        <p>logged in as: {username? username : "Guest"}</p> 
       </div>
 
       <div className="chat-body">
@@ -49,7 +50,7 @@ function Chat({socket, username, room}) {
            return (
              <div key={i} className="message-div" data-id={username === mes.user ? "support" : "client"} >
                <p className="message-time">{mes.time}</p>
-               <p className="message-user">{mes.user}</p>
+               <p className="message-user">{mes.user} says:</p>
                <p className="message-text">{mes.message}</p>
              </div>
            ) 
@@ -67,8 +68,8 @@ function Chat({socket, username, room}) {
           <button type="submit" > &#9658; </button>
         </form>
     </div>
-    </section>
-  )
-  }
+  </section>
+)
+}
 
 export default Chat;
