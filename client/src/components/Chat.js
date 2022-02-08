@@ -9,12 +9,16 @@ function Chat({socket, username, room}) {
   const sendMessage = async (e) => {
     console.log(currentMessage);
     e.preventDefault();
-    if (currentMessage != '') {      
+    if (currentMessage != '') {     
+      const hours =  new Date(Date.now()).getHours();
+      const printHours = hours < 10 ? `0${hours}` : hours;
+      const minutes = new Date(Date.now()).getMinutes();
+      const printMinutes = minutes < 10 ? `0${minutes}` : minutes;
       const messageData = {
         room: room, //comes from props
         user: username,
         message: currentMessage,
-        time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
+        time: `${printHours}:${printMinutes}`
       };
       await socket.emit("send_message", messageData);
       setMessageList((prev) => [...prev, messageData]);
