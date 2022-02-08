@@ -6,6 +6,14 @@ function Chat({socket, username, room, setRoom, setUsername, setShowChat}) {
   const [messageList, setMessageList] = useState([]);
   const [formError, setFormError] = useState("");
 
+  const logoutUser = () => {
+    localStorage.setItem('room', ''); 
+      setRoom('');
+      localStorage.setItem('username', '');
+      setUsername('');
+      setShowChat('');
+  }
+
   const sendMessage = async (e) => {
     // console.log(currentMessage);
     e.preventDefault();
@@ -48,15 +56,8 @@ function Chat({socket, username, room, setRoom, setUsername, setShowChat}) {
         <h4>Level {room} Support</h4>
         <div className="logout-div">
           <span>Hi {username ? username : "Guest"}!</span> 
-          <button type="text" className=".error" 
-            onClick={() => {
-              localStorage.setItem('room', ''); 
-              setRoom('');
-              localStorage.setItem('username', '');
-              setUsername('');
-              setShowChat('');
-            }} 
-            >End chat
+          <button type="text" className=".error" onClick={logoutUser} >
+            End chat
           </button>
         </div>
       </div>
