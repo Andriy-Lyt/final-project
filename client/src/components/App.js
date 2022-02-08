@@ -7,14 +7,14 @@ import Login from './Login';
 const socket = io.connect("http://localhost:3001");
 
 function App() {
-  const[username, setUsername] = useState("");
-  const [room, setRoom] = useState("");
-  const [showChat, setShowChat] = useState(false);
+  const[username, setUsername] = useState(localStorage.getItem('username') || '');
+  const [room, setRoom] = useState(localStorage.getItem('room') || '');
+  const [showChat, setShowChat] = useState(room);
 
   const joinRoom = () => {
     if (username && room) {
       socket.emit("join_room", room);
-      setShowChat(true);
+      setShowChat(room);
     } 
   }
 

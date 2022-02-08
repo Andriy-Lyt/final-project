@@ -26,12 +26,13 @@
   padding: 5px 8px;
   margin-bottom: 10px; 
 }
+/* single chat Message   */
 .message-div {
   max-width: 48%;
   overflow-wrap: break-word;
   margin: 3px 0;
   padding:2px;
-  background-color: aliceblue;
+  
 }
 .message-div[data-id='support'] {
   align-self: flex-start;
@@ -41,6 +42,13 @@
 }
 .message-div p {
   margin: 0 2px;
+  padding: 2px;
+}
+.message-text{
+  background-color: aliceblue;
+}
+.message-time, .message-user {
+  font-size: 0.8rem;
 }
 /* New Message Form ---- */
 .form-container {

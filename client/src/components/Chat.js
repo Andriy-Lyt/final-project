@@ -46,15 +46,15 @@ function Chat({socket, username, room}) {
     <section className="chat-container">
       <div className="chat-header">
         <h3>Live Chat Support</h3>
-        <p>logged in as: {username? username : "Guest"}</p> 
+        <p>logged in as: {username ? username : "Guest"}</p> 
       </div>
 
       <div className="chat-body">
         {messageList.map((mes, i) => {
            return (
              <div key={i} className="message-div" data-id={username === mes.user ? "support" : "client"} >
-               <p className="message-time">{mes.time}</p>
-               <p className="message-user">{mes.user} says:</p>
+               <p className="message-time">{mes.time}, {mes.user} says:</p>
+               {/* <p className="message-user">{mes.user} says:</p> */}
                <p className="message-text">{mes.message}</p>
              </div>
            ) 
