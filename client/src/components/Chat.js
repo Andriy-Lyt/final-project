@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import './../styles/Chat.css';
 
-function Chat({socket, username, room}) {
+function Chat({socket, username, room, setRoom, setUsername, setShowChat}) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [formError, setFormError] = useState("");
 
   const sendMessage = async (e) => {
-    console.log(currentMessage);
+    // console.log(currentMessage);
     e.preventDefault();
     if (currentMessage != '') {     
       const hours =  new Date(Date.now()).getHours();
@@ -37,7 +37,7 @@ function Chat({socket, username, room}) {
 
  useEffect(() => { 
    socket.on("receive_message", (data) => {
-      console.log("data received back from backend: ", data);
+      // console.log("data received back from backend: ", data);
       setMessageList((prev) => [...prev, data]);
     });
   }, [socket]);
@@ -45,8 +45,20 @@ function Chat({socket, username, room}) {
   return (
     <section className="chat-container">
       <div className="chat-header">
-        <h3>Live Chat Support</h3>
-        <p>logged in as: {username ? username : "Guest"}</p> 
+        <h4>Level {room} Support</h4>
+        <div className="logout-div">
+          <span>Hi {username ? username : "Guest"}!</span> 
+          <button type="text" className=".error" 
+            onClick={() => {
+              localStorage.setItem('room', ''); 
+              setRoom('');
+              localStorage.setItem('username', '');
+              setUsername('');
+              setShowChat('');
+            }} 
+            >End chat
+          </button>
+        </div>
       </div>
 
       <div className="chat-body">

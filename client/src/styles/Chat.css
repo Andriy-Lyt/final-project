@@ -1,4 +1,5 @@
 .chat-container {
+  margin-top: 50px;
   min-height: 400px;
   max-height: 500px;
   width:100%;
@@ -11,11 +12,30 @@
 }
 .chat-header {
   width: 100%;
-  padding: 0 10px 0 12px;
+  padding: 0 12px;
   display: flex;
   justify-content: space-between;
   border-bottom: var(--lblue);
+  background-color: var(--slgreen);
 }
+.chat-header h4, .logout-div {
+  margin: 6px 0; 
+}
+.logout-div span{
+  margin-right: 12px;
+}
+.logout-div button {
+  background-color: var(--slred);
+  border-radius: 4px;
+  border: 1px solid var(--mred);;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+.logout-div button:hover {
+  background-color: var(--lred);
+}
+
+/* Chat Body ----- */
 .chat-body {
   /* border: 1px solid blue; */
   overflow-y: auto;
@@ -42,10 +62,11 @@
 }
 .message-div p {
   margin: 0 2px;
-  padding: 2px;
+  padding: 3px;
 }
 .message-text{
   background-color: aliceblue;
+  border-radius: 5px;
 }
 .message-time, .message-user {
   font-size: 0.8rem;
@@ -56,7 +77,7 @@
 }
 .error {
   color: var(--error);
-  font-size: 0.8rem;
+  /* font-size: 0.8rem; */
 }
 .chat-form {
   display: flex;

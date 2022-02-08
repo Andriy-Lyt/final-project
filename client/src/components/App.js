@@ -20,12 +20,6 @@ function App() {
 
   return (
     <div className="App-container">
-      <header>
-        <h2 style={{textAlign:"center"}}>Lets Rock the Final!
-        <span style={{fontSize:"30px"}}> &#128512; </span>
-        Yeah!
-        </h2> 
-      </header>
 
       {!showChat && 
       <Login 
@@ -34,7 +28,16 @@ function App() {
         joinRoom={joinRoom}
       /> }   
 
-      {showChat && <Chat socket={socket} username={username} room={room} />}
+      {showChat && 
+      <Chat 
+        socket={socket} 
+        username={username} 
+        room={room} 
+        setRoom={setRoom}
+        setUsername={setUsername}
+        setShowChat={setShowChat}
+        />
+        }
       
     </div>
   )
