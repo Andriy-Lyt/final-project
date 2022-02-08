@@ -9,6 +9,7 @@ const socket = io.connect("http://localhost:3001");
 function App() {
   const[username, setUsername] = useState("");
   const [room, setRoom] = useState("");
+  const [showChat, setShowChat] = useState(false);
 
   const joinRoom = () => {
     if (username && room) {
@@ -26,13 +27,14 @@ function App() {
         </h2> 
       </header>
 
+      {!showChat && 
       <Login 
         setUsername={setUsername}
         setRoom={setRoom}
         joinRoom={joinRoom}
-      />  
+      /> }   
 
-      <Chat socket={socket} username={username} room={room} />
+      {showChat && <Chat socket={socket} username={username} room={room} />}
       
     </div>
   )

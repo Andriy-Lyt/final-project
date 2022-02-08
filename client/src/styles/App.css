@@ -1,5 +1,23 @@
-.App {
-  text-align: center;
-  color: rgb(202, 74, 138);
+.App-container{
+  /* border:1px solid green; */
+  margin: 10px auto;
+  width: 600px;
+}
+h1, h2 {
+  color: rgb(179, 31, 105);
 }
 
+h3, h4 {
+  color: var(-dblue);
+}
+
+/* Form General */
+input {
+  padding: 2px;
+  border-radius: 3px;
+  border: 1px solid grey;
+
+}
+input[type='text']:focus {
+  border: 1px solid var(--mblue);
+}
