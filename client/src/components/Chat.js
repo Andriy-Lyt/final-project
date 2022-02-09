@@ -1,17 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import './../styles/Chat.css';
 
-function Chat({socket, username, room, setRoom, setUsername, setShowChat}) {
+function Chat({socket, username, room, setRoom, setUsername, setShowChat, isOpen, setIsOpen}) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [formError, setFormError] = useState("");
 
   const logoutUser = () => {
-    localStorage.setItem('room', ''); 
+      localStorage.setItem('room', ''); 
       setRoom('');
       localStorage.setItem('username', '');
       setUsername('');
       setShowChat('');
+      setIsOpen(!isOpen);
   }
 
   const sendMessage = async (e) => {
@@ -53,7 +54,7 @@ function Chat({socket, username, room, setRoom, setUsername, setShowChat}) {
   return (
     <section className="chat-container">
       <div className="chat-header">
-        <h4>Level {room} Support</h4>
+        <h4 style={{fontSize:"16px"}}>Level {room} Support</h4>
         <div className="logout-div">
           <span>Hi {username ? username : "Guest"}!</span> 
           <button type="text" className="btn-red" onClick={logoutUser} >

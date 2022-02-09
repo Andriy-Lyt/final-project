@@ -1,7 +1,8 @@
 import React, {useState, /* useRef */} from 'react';
-import './../styles/App.css';
 import io from 'socket.io-client';
 import ChatBlock from './ChatBlock';
+import HomePage from './HomePage';
+import './../styles/App.css';
 
 const socket = io.connect("http://localhost:3001");
 
@@ -21,9 +22,10 @@ function App() {
   // const chatWindow = useRef(null);
 
   return (
-    <div className="App-container">
-
-      <ChatBlock 
+    <div className="app-container">
+      <HomePage />
+      
+      <ChatBlock
         setUsername={setUsername}
         setRoom={setRoom}
         joinRoom={joinRoom}
