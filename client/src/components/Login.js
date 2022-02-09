@@ -7,7 +7,11 @@ function Login({setUsername, setRoom, joinRoom}) {
   const[nameError, setNameError] = useState('');
   const[formInputName, setFormInputName] = useState('');
 
-  const handleformInputName = (e) => setFormInputName(e.target.value);
+  const handleFormInputName = (e) => {
+    setFormInputName(e.target.value);
+  };
+
+  const clearInputOnFocus = (e) => setNameError('');
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -41,7 +45,7 @@ function Login({setUsername, setRoom, joinRoom}) {
             <div className="error">{nameError}</div>
 
             <input type="text" className="name-input" placeholder="Your Name.." 
-              onChange={handleformInputName}
+              onChange={handleFormInputName} onFocus={clearInputOnFocus}
               />
 
             <div className="buttons-div">
