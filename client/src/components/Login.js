@@ -1,46 +1,22 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './../styles/App.css';
 import './../styles/Login.css';
 
 function Login({setUsername, setRoom, joinRoom}) {
-  const[btn1Color, setBtn1Color] = useState('');
-  const[btn2Color, setBtn2Color] = useState('');
+  const[currentNumber, setCurrentNumber] = useState(1);
 
-  console.log("rerender");
-  
-/*   useEffect(() => {
-    if (activeBtn == 1) {
-      btn1Color = 'btn-blue';
-      btn2Color = '';
-    }
-    if (activeBtn == 2) {
-      btn1Color = '';
-      btn2Color = 'btn-blue';
-    }  
-  }, [activeBtn]);
-
- */  
-    const onRoomBtnClick = (event) => {
-    const roomNumber =  event.target.value.substring(6, 7);
+  const onRoomBtnClick = (event, roomNumber) => {
 
     localStorage.setItem('room', roomNumber);
     setRoom(roomNumber || '');
 
-    if (roomNumber == 1) {
-      setBtn1Color('btn-blue');
-      setBtn1Color('');
-    }
-    if (roomNumber == 2) {
-      setBtn1Color('');
-      setBtn1Color('btn-blue');
-    }  
+    setCurrentNumber(roomNumber);
 
-    console.log("btn1Color: ", btn1Color);
-    console.log("btn2Color: ", btn2Color);
-  
   } // closing onRoomBtnClick()
 
-
+  const btn1Color = currentNumber == 1 ? 'btn-blue' : '';
+  const btn2Color = currentNumber == 2 ? 'btn-blue' : '';
+  
   return (
     <div className="login-container">
         <h3>Support Chat</h3>
@@ -54,8 +30,12 @@ function Login({setUsername, setRoom, joinRoom}) {
               }/>
 
             <div className="buttons-div">
-              <input type="button" value="Level 1 Support" className={"level-btn " + /* " btn-blue " */ + {btn1Color}} onClick={onRoomBtnClick} />
-              <input type="button" value="Level 2 Support" className={"level-btn " + {btn2Color}} onClick={onRoomBtnClick} />
+
+              <input type="button" value="Level 1 Support" className={"level-btn " + btn1Color} 
+              onClick={(e) => onRoomBtnClick(e, 1)} />
+
+              <input type="button" value="Level 2 Support" className={"level-btn " + btn2Color} 
+              onClick={(e) => onRoomBtnClick(e, 2)} />
             </div>
 
           <button id="join-btn" className="btn-green" onClick={joinRoom}>Join a Room</button>
