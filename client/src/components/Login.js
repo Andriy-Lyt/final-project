@@ -36,7 +36,6 @@ function Login({setUsername, setRoom, joinRoom}) {
   
   return (
     <div className="login-container">
-        <h3>Support Chat</h3>
         <form className="login-form" onSubmit={submitForm}>
 
             <div className="error">{nameError}</div>

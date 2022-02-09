@@ -2,10 +2,7 @@
   /* border:1px solid green; */
   width: 100%;
 }
-.chat-window-container{
-  margin: 20px auto;
-  width:370px;
-}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--dblue);
 }
