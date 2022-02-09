@@ -8,14 +8,16 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username,
 
   const [isOpen, setIsOpen] = useState(false);
 
- 
   const toggleOpen = () => setIsOpen(!isOpen);
+
+  const chatStyle = {
+    height: isOpen ? "400px" : "35px",
+    opacity: isOpen ? "1" : "0.7",
+  }
 
   return (
     <div className="chat-window-container" 
-        style={isOpen ? {height: "400px", opacity: 1 }
-      : {height: "35px", opacity: 0.7}
-    }>
+        style={chatStyle}>
       <div className="open-chat-div">
         <button type="text" className="open-chat-btn" onClick={toggleOpen} >
         {!isOpen ? 'Open Support Chat' : "Close Chat"}  
