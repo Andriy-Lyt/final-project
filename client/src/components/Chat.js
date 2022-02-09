@@ -78,7 +78,7 @@ function Chat({socket, username, room, setRoom, setUsername, setShowChat}) {
       <div className="form-container">
        {formError && <div className="error"> {formError} </div>}
         <form className="chat-form" onSubmit={sendMessage}>        
-          <textarea rows="3" maxLength="500" placeholder="Type your message.." 
+          <textarea rows="2" maxLength="500" placeholder="Type your message.." 
           onChange={(event) => {setCurrentMessage(event.target.value.trim()); setFormError(''); }}
           onKeyPress={onKeyPress}>
           </textarea>
