@@ -12,7 +12,6 @@ function App() {
   const [showChat, setShowChat] = useState(room);
 
   const joinRoom = (username, room) => {
-    console.log("joinRoom runs");
     if (username && room) {
       socket.emit("join_room", room);
       setShowChat(room);

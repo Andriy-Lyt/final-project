@@ -15,16 +15,11 @@ function Login({setUsername, setRoom, joinRoom}) {
       setNameError("Please enter your Name");
     } 
     if(formInputName) {
-      console.log("line 18 runs");
       localStorage.setItem('username', formInputName);
       setUsername(formInputName);
       
-      console.log("formInputName: ", formInputName);
-
       localStorage.setItem('room', selectedRoom);
       setRoom(selectedRoom);
-
-      console.log("selectedRoom: ", selectedRoom);
 
       joinRoom(formInputName, selectedRoom);
     }
@@ -52,10 +47,10 @@ function Login({setUsername, setRoom, joinRoom}) {
 
             <div className="buttons-div">
 
-              <input type="button" value="Level 1 Support" className={"level-btn " + btn1Color} 
+              <input type="button" value="Level 1 Support" className={"level-btn " + btn1Color} style={{cursor: "pointer"}}
               onClick={(e) => onRoomBtnClick(e, 1)} />
 
-              <input type="button" value="Level 2 Support" className={"level-btn " + btn2Color} 
+              <input type="button" value="Level 2 Support" className={"level-btn " + btn2Color} style={{cursor: "pointer"}}
               onClick={(e) => onRoomBtnClick(e, 2)} />
             </div>
 
