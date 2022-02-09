@@ -11,7 +11,8 @@ function App() {
   const [room, setRoom] = useState(localStorage.getItem('room') || '');
   const [showChat, setShowChat] = useState(room);
 
-  const joinRoom = () => {
+  const joinRoom = (username, room) => {
+    console.log("joinRoom runs");
     if (username && room) {
       socket.emit("join_room", room);
       setShowChat(room);
