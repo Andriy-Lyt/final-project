@@ -21,23 +21,25 @@ function App() {
   return (
     <div className="App-container">
 
-      {!showChat && 
-      <Login 
-        setUsername={setUsername}
-        setRoom={setRoom}
-        joinRoom={joinRoom}
-      /> }   
+      <div className="chat-window-container">
+        {!showChat && 
+        <Login 
+          setUsername={setUsername}
+          setRoom={setRoom}
+          joinRoom={joinRoom}
+        /> }   
 
-      {showChat && 
-      <Chat 
-        socket={socket} 
-        username={username} 
-        room={room} 
-        setRoom={setRoom}
-        setUsername={setUsername}
-        setShowChat={setShowChat}
-        />
-        }
+        {showChat && 
+        <Chat 
+          socket={socket} 
+          username={username} 
+          room={room} 
+          setRoom={setRoom}
+          setUsername={setUsername}
+          setShowChat={setShowChat}
+          />
+          }
+      </div>
       
     </div>
   )

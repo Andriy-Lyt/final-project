@@ -56,7 +56,7 @@ function Chat({socket, username, room, setRoom, setUsername, setShowChat}) {
         <h4>Level {room} Support</h4>
         <div className="logout-div">
           <span>Hi {username ? username : "Guest"}!</span> 
-          <button type="text" className=".error" onClick={logoutUser} >
+          <button type="text" className="btn-red" onClick={logoutUser} >
             End chat
           </button>
         </div>
@@ -82,7 +82,7 @@ function Chat({socket, username, room, setRoom, setUsername, setShowChat}) {
           onChange={(event) => {setCurrentMessage(event.target.value.trim()); setFormError(''); }}
           onKeyPress={onKeyPress}>
           </textarea>
-          <button type="submit" > &#9658; </button>
+          <button type="submit" className="btn-green"> &#9658; </button>
         </form>
     </div>
   </section>

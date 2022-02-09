@@ -22,11 +22,13 @@ code {
 */
 :root {
   --font-color: #3c3d41;
-  --lblue: #cbcef0;
-  --mblue: #4e5ac7;
-  --slgreen:  #d4f5df;
-  --lgreen:  #3eca7d;
-  --green: #20a75d;  /* var(--green); */
+  --lblue: #c2d2fd;
+  --mblue: #3457b6;
+  --dblue: #16358a;
+  --slgreen:  #d9f8df;
+  --lgreen:  #a8f3ca;
+  --mgreen: #33bd78;  /* var(--green); */
+  --dgreen: #0a723e;  /* var(--green); */
   --slred: rgb(252, 235, 244);
   --lred: rgb(247, 221, 235);
   --mred: rgb(223, 166, 195);
