@@ -1,11 +1,11 @@
 .chat-window-container{
   /* height: 400px;  height set in ChatBlock.js line 15*/ 
-  width:300px;
+  /* width:300px; */
   position: fixed;
   right: 55px;
   bottom: 20px;
   overflow: hidden;
-  transition: height ease-in-out 0.4s, opacity 0.3s;
+  transition: height ease-in-out 0.4s, width 0.4s, opacity 0.3s ;
   box-shadow: 0 0 0px 1px var(--mblue),
     0 0 0px 4px rgba(240, 241, 243, 0.8);
   border-radius: 3px;
@@ -131,6 +131,6 @@
 .open-chat-icon {
   color: white;
   position: absolute;
-  right: 20px; top: 7px;
+  right: 10px; top: 7px;
   font-size: 18px;
 }

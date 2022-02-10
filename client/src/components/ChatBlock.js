@@ -13,6 +13,7 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username,
   const chatStyle = {
     height: isOpen ? "400px" : "35px",
     opacity: isOpen ? "1" : "0.7",
+    width: isOpen ? "320px" : "200px",
   }
 
   return (
@@ -20,7 +21,7 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username,
         style={chatStyle}>
       <div className="open-chat-div">
         <button type="text" className="open-chat-btn" onClick={toggleOpen} >
-        {!isOpen ? 'Open Support Chat' : "Close Chat"}  
+        {!isOpen ? 'Open Chat' : "Close Chat"}  
         <span className="open-chat-icon">{!isOpen ?  '▲' : "▼"}</span>
       </button>
 

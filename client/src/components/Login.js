@@ -57,7 +57,7 @@ function Login({setUsername, setRoom, joinRoom}) {
               onClick={(e) => onRoomBtnClick(e, 2)} />
             </div>
 
-          <button type="submit" id="join-btn" className="btn-green">Join a Room</button>
+          <button type="submit" id="join-btn" className="btn-green">Start Chat</button>
         </form>
     </div>
   )
