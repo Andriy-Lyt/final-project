@@ -54,12 +54,14 @@ body {
 }
 
 h1 {
+  color: white;
   font-size: 44px;
   font-weight: 700;
   margin: 100px 0 0 0;
 } 
 
 h2 {
+  color: white;
   font-size: 44px;
   font-weight: 400;
   margin: 10px 10px;
@@ -167,6 +169,7 @@ h4 {
 }
 
 .brand-new-title {
+  color: black;
   margin: 0;
 }
 

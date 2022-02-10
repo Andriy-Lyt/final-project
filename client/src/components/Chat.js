@@ -18,7 +18,7 @@ function Chat({socket, username, room, setRoom, setUsername, setShowChat, isOpen
   const sendMessage = async (e) => {
     // console.log(currentMessage);
     e.preventDefault();
-    if (currentMessage != '') {     
+    if (currentMessage !== '') {     
       const hours =  new Date(Date.now()).getHours();
       const printHours = hours < 10 ? `0${hours}` : hours;
       const minutes = new Date(Date.now()).getMinutes();

@@ -35,8 +35,8 @@ function Login({setUsername, setRoom, joinRoom}) {
     setSelectedRoom(roomNumber);
   } // closing onRoomBtnClick()
 
-  const btn1Color = selectedRoom == 1 ? 'btn-blue' : '';
-  const btn2Color = selectedRoom == 2 ? 'btn-blue' : '';
+  const btn1Color = selectedRoom === 1 ? 'btn-blue' : '';
+  const btn2Color = selectedRoom === 2 ? 'btn-blue' : '';
   
   return (
     <div className="login-container">
