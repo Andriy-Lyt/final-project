@@ -11,7 +11,8 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username,
   const toggleOpen = () => setIsOpen(!isOpen);
 
   const chatStyle = {
-    height: isOpen ? "400px" : "35px",
+    height: isOpen ? "300px" : "40px",
+    width: isOpen ? "300px" : "40px",
     opacity: isOpen ? "1" : "0.7",
   }
 
@@ -19,9 +20,9 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username,
     <div className="chat-window-container" 
         style={chatStyle}>
       <div className="open-chat-div">
-        <button type="text" className="open-chat-btn" onClick={toggleOpen} >
-        {!isOpen ? 'Open Support Chat' : "Close Chat"}  
-        <span className="open-chat-icon">{!isOpen ?  '▲' : "▼"}</span>
+        <button type="text" className="neo-icon-agents" onClick={toggleOpen} >
+       {/* {!isOpen ? 'Open Support Chat' : "Close Chat"}  
+        <span className="open-chat-icon">{!isOpen ?  '▲' : "▼"}</span> */}
       </button>
 
       </div>

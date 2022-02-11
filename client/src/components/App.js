@@ -3,6 +3,7 @@ import io from 'socket.io-client';
 import ChatBlock from './ChatBlock';
 import HomePage from './HomePage';
 import './../styles/App.css';
+import Bubble from './Bubble';
 
 const socket = io.connect("http://localhost:3001");
 
@@ -24,7 +25,6 @@ function App() {
   return (
     <div className="app-container">
       <HomePage />
-      
       <ChatBlock
         setUsername={setUsername}
         setRoom={setRoom}
