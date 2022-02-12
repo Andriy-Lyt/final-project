@@ -11,9 +11,12 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username,
   const toggleOpen = () => setIsOpen(!isOpen);
 
   const chatStyle = {
-    height: isOpen ? "300px" : "40px",
-    width: isOpen ? "300px" : "40px",
+    height: isOpen ? "300px" : "60px",
+    width: isOpen ? "300px" : "60px",
     opacity: isOpen ? "1" : "0.7",
+    'border-radius': isOpen ? "0" : "50%",
+    display: isOpen ? "revert" : "flex",
+    'align-items': isOpen ? "unset" : "center",
   }
 
   return (
