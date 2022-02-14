@@ -1,5 +1,9 @@
 # Final Project
 
+## required versions
+Node.js version 14.17.0 or higher,
+NPM version 8.3.0 or higher.
+
 ## React frontend
 To start frontend from the client directory run:
 ```
