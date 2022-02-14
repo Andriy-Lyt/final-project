@@ -7,7 +7,12 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username,
   room, showChat, setShowChat}) {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [chatBtnClass, setChatBtnClass] = useState("neo-icon-agents");
 
+   useEffect(() => {
+    setChatBtnClass(!isOpen ? "neo-icon-agents" : "open-chat-btn") 
+  }, [isOpen])
+ 
   const toggleOpen = () => setIsOpen(!isOpen);
 
   const chatStyle = {
@@ -23,9 +28,9 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username,
     <div className="chat-window-container" 
         style={chatStyle}>
       <div className="open-chat-div">
-        <button type="text" className="neo-icon-agents" onClick={toggleOpen} >
-       {/* {!isOpen ? 'Open Support Chat' : "Close Chat"}  
-        <span className="open-chat-icon">{!isOpen ?  '▲' : "▼"}</span> */}
+        <button type="text" className={chatBtnClass} onClick={toggleOpen} >
+        {!isOpen ? '' : "Fold down"}  
+        <span className="open-chat-icon">{!isOpen ?  '' : "▼"}</span> 
       </button>
 
       </div>
