@@ -19,19 +19,16 @@ function ChatBlock({username, setUsername, setRoom, joinRoom, socket, userEmail,
 
   return (
     <>
+    {/* Agent Icon */}
     {!isOpen && 
       <i aria-label="open support chat icon" className="neo-icon-agents" onClick={toggleOpen}></i>
-    }     
+    }  
 
-    <div className="chat-window-container" style={chatStyle}>
-      <div className="open-chat-div" onClick={toggleOpen}>
-          {isOpen && 
-          <button type="text" className="open-chat-btn"  >
-            {!isOpen ? '' : "Fold down"}  
-            <span className="open-chat-icon">{!isOpen ?  '' : "▼"}</span> 
-          </button>     
-          }
-      </div>
+    {/* Chat content */}
+    <div className="chat-window-container" style={chatStyle}> 
+         
+       {/* Fold down chat button */}
+      <div className="close-chat-icon" onClick={toggleOpen}>&#x2014;</div>   
       
       {(!showChat && isOpen) &&
       <Login  

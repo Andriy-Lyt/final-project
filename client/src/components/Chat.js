@@ -55,14 +55,15 @@ function Chat({socket, username, setUsername, userEmail, setUserEmail, room, set
 
   return (
     <section className="chat-container">
+
+        <button type="text" className="btn-red logout-btn" onClick={logoutUser} >
+             Logout
+        </button>
+
       <div className="chat-header">
-        <h4 style={{fontSize:"16px"}}>Level {room} Support</h4>
-        <div className="logout-div">
-          <span>Hi {username ? username : "Guest"}!</span> 
-          <button type="text" className="btn-red" onClick={logoutUser} >
-            End chat
-          </button>
-        </div>
+          <h4>Hi {username ? username : "Guest"}!</h4> 
+          <p>Welcome to our support system.</p>
+          
       </div>
 
       <div className="chat-body">
