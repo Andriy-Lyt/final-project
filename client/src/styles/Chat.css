@@ -2,11 +2,11 @@
   /* height: 400px;  height set in ChatBlock.js line 19*/ 
   /* width:300px; width set in ChatBlock.js line 20 */
   position: fixed;
-  right: 55px;
+  right: 60px;
   bottom: 20px;
   overflow: hidden;
-  box-shadow: 0 0 0px 1px var(--mblue),
-    0 0 0px 4px rgba(240, 241, 243, 0.8);
+  /* box-shadow: 0 0 0px 1px var(--mblue),
+    0 0 0px 4px rgba(240, 241, 243, 0.8); */
   border-radius: 3px;
   background-color: white;
   transition: height ease-in-out 0.4s, width 0.4s, opacity 0.3s

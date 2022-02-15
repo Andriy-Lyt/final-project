@@ -9,6 +9,7 @@ const socket = io.connect("http://localhost:3001");
 
 function App() {
   const[username, setUsername] = useState(localStorage.getItem('username') || '');
+  const[userEmail, setUserEmail] = useState(localStorage.getItem('useremail') || '');
   const [room, setRoom] = useState(localStorage.getItem('room') || '');
   const [showChat, setShowChat] = useState(room);
 
@@ -27,10 +28,12 @@ function App() {
       <HomePage />
       <ChatBlock
         setUsername={setUsername}
+        setUserEmail={setUserEmail}
         setRoom={setRoom}
         joinRoom={joinRoom}
         socket={socket} 
         username={username} 
+        userEmail={userEmail}
         room={room} 
         showChat={showChat}
         setShowChat={setShowChat}

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './../styles/Chat.css';
 
-function Chat({socket, username, room, setRoom, setUsername, setShowChat, isOpen, setIsOpen}) {
+function Chat({socket, username, userEmail, room, setRoom, setUsername, setUserEmail, setShowChat, isOpen, setIsOpen}) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [formError, setFormError] = useState("");
@@ -11,6 +11,8 @@ function Chat({socket, username, room, setRoom, setUsername, setShowChat, isOpen
       setRoom('');
       localStorage.setItem('username', '');
       setUsername('');
+      localStorage.setItem('useremail', '');
+      setUserEmail('');
       setShowChat('');
       setIsOpen(!isOpen);
   }

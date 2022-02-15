@@ -20,6 +20,11 @@
   align-items: center;
 }
 
+.error-div {
+  width:100%;
+  margin-bottom: 15px;
+}
+
 .name-input {
   width: 100%;
   display:block;
