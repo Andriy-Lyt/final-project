@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './../styles/Chat.css';
 
-function Chat({socket, username, userEmail, room, setRoom, setUsername, setUserEmail, setShowChat, isOpen, setIsOpen}) {
+function Chat({socket, username, setUsername, userEmail, setUserEmail, room, setRoom, setShowChat, isOpen, setIsOpen}) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [formError, setFormError] = useState("");

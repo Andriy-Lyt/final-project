@@ -56,12 +56,12 @@ function Login({setUsername, setUserEmail, setRoom, joinRoom}) {
 
             <div className="error error-div">{nameError}</div>
 
-            <input type="text" className="name-input" placeholder="Your Name.." 
+            <input type="text" className="input" placeholder="Your Name.." 
               onChange={handleFormInputName} onFocus={clearNameError}
               />
 
             <div className="error error-div">{emailError}</div>
-            <input type="text" className="name-input" placeholder="Your Email.." 
+            <input type="email" className="input" placeholder="Your Email.." 
               onChange={handleFormInputEmail} onFocus={clearEmailError}
               />
 

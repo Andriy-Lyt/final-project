@@ -25,15 +25,16 @@
   margin-bottom: 15px;
 }
 
-.name-input {
+.input {
   width: 100%;
   display:block;
   border: none;
   border-bottom: 1px solid lightgrey;
   margin-bottom: 16px;
 }
-.login-form input:focus{
+ .input:focus{
   border: none;
+  outline:none;
   border-bottom: 1px solid var(--mblue);
 }
 

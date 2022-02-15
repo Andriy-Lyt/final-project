@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import Chat from './Chat';
 import Login from './Login';
 import './../styles/App.css';
+import Buble from './Bubble';
 
-function ChatBlock({setUsername, setRoom, joinRoom, socket, username, userEmail,
-  room, showChat, setShowChat}) {
+function ChatBlock({username, setUsername, setRoom, joinRoom, socket, userEmail, setUserEmail, room, showChat, setShowChat}) {
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,7 +20,7 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username, userEmail,
   return (
     <>
     {!isOpen && 
-      <i className="neo-icon-agents" onClick={toggleOpen}></i>
+      <i aria-label="open support chat icon" className="neo-icon-agents" onClick={toggleOpen}></i>
     }     
 
     <div className="chat-window-container" style={chatStyle}>
@@ -36,6 +36,7 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username, userEmail,
       {(!showChat && isOpen) &&
       <Login  
         setUsername={setUsername}
+        setUserEmail={setUserEmail}
         setRoom={setRoom}
         joinRoom={joinRoom}
       /> }
@@ -45,9 +46,10 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username, userEmail,
         socket={socket} 
         username={username} 
         userEmail={userEmail}
+        setUsername={setUsername}
+        setUserEmail={setUserEmail}
         room={room} 
         setRoom={setRoom}
-        setUsername={setUsername}
         setShowChat={setShowChat}
         setIsOpen={setIsOpen}
         isOpen={isOpen}

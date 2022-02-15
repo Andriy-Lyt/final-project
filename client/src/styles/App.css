@@ -17,7 +17,7 @@ input {
   border: 1px solid grey;
   outline:none;
 }
-input[type='text']:focus {
+input:focus {
   border: 1px solid var(--mblue);
   outline:none;
 }
