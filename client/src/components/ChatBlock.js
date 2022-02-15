@@ -52,10 +52,7 @@ function ChatBlock({setUsername, setRoom, joinRoom, socket, username,
         isOpen={isOpen}
         /> }
   </div>
-<<<<<<< HEAD
-=======
   </>
->>>>>>> andy2
   )
 }
 

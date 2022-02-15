@@ -1,31 +1,16 @@
 .chat-window-container{
-<<<<<<< HEAD
-  /* height: 400px;  height set in ChatBlock.js line 15*/ 
-  /* width:300px; */
-=======
   /* height: 400px;  height set in ChatBlock.js line 19*/ 
   /* width:300px; width set in ChatBlock.js line 20 */
->>>>>>> andy2
   position: fixed;
   right: 55px;
   bottom: 20px;
   overflow: hidden;
-<<<<<<< HEAD
-  transition: height ease-in-out 0.4s, width 0.4s, opacity 0.3s ;
   box-shadow: 0 0 0px 1px var(--mblue),
     0 0 0px 4px rgba(240, 241, 243, 0.8);
   border-radius: 3px;
   background-color: white;
-}
-=======
-  box-shadow: 0 0 0px 1px var(--mblue),
-  0 0 0px 4px rgba(240, 241, 243, 0.8);
-  border-radius: 3px;
-  background-color: white;
   transition: height ease-in-out 0.4s, width 0.4s, opacity 0.3s
 }
-
->>>>>>> andy2
 .chat-window-container:hover{
   opacity: 1 !important;
 }

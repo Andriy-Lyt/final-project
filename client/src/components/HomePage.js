@@ -13,13 +13,13 @@ function HomePage() {
   <div>
     <nav className="Navbar">
       <a className="NavbarBar" title="Neo Design System" href="https://design.avaya.com/">
-        <img src={headerLogo} alt="header-logo" className="header-logo"/>
+        <img alt="fix" alt="fix" src={headerLogo} alt="header-logo" className="header-logo"/>
       </a>
       <ul className="Navlist">
-        <a className="Navlistitem new" target="_blank" href="https://design.avaya.com/whats-new/">What's New</a>
+        <a className="Navlistitem new" target="_blank" rel="noreferrer" rel="noreferrer" href="https://design.avaya.com/whats-new/">What's New</a>
         <a className="Navlistitem guide">Guidelines</a>
         <a className="Navlistitem components">Components</a>
-        <a className="Navlistitem faqs" target="_blank" href="https://design.avaya.com/faq/">FAQs</a>
+        <a className="Navlistitem faqs" target="_blank" rel="noreferrer" rel="noreferrer" href="https://design.avaya.com/faq/">FAQs</a>
       </ul>
     </nav>
 
@@ -35,7 +35,7 @@ function HomePage() {
           <section className="libraries">
             <section className="library design-foundations">
               <section className="icon-wrapper">
-                <img className="library-icon" src={designFoundations}/>
+                <img alt="fix" className="library-icon" src={designFoundations}/>
               </section>
               <h4>Design Foundations</h4> 
               <p className="text">A UX Design System that helps developers build consistent and exceptional user experiences.</p>
@@ -43,7 +43,7 @@ function HomePage() {
 
             <section className="library ui-component">
               <section className="icon-wrapper">
-                <img className="library-icon" src={uiComponent}/>
+                <img alt="fix" className="library-icon" src={uiComponent}/>
               </section>
               <h4>UI Component Libraries</h4>
               <p className="text">Code components for all of the common elements you use in your apps.</p>
@@ -51,7 +51,7 @@ function HomePage() {
 
             <section className="library icon-library">
               <section className="icon-wrapper">
-                <img className="library-icon" src={iconLibrary}/>
+                <img alt="fix" className="library-icon" src={iconLibrary}/>
               </section>
               <h4>Icon Library</h4>
               <p className="text">An extensive collection of icons for nearly every occasion.</p>
@@ -70,11 +70,11 @@ function HomePage() {
         </section>
         <button className="brand-new-button">Component Libraries</button>
       </section>
-      <img className="brand-new-image" src={brandNew}/>
+      <img alt="fix" className="brand-new-image" src={brandNew}/>
     </section>
     
     <section className="inclusive">
-      <img className="inclusive-image" src={inclusive}/>
+      <img alt="fix" className="inclusive-image" src={inclusive}/>
       <section className="inclusive-description">
         <section className="inclusive-title-text">
           <h2 className="inclusive-title">Inclusive Design.</h2>
@@ -89,15 +89,15 @@ function HomePage() {
     </section>
 
     <footer>
-      <img src={footerLogo} alt="footer-logo" className="footer-logo"/>
+      <img alt="fix" src={footerLogo} alt="footer-logo" className="footer-logo"/>
       <ul className="footer-list">
-        <a className="footer-list-item terms" target="_blank" href="https://www.avaya.com/en/termsofuse/">Terms of Use</a>
-        <a className="footer-list-item license" target="_blank" href="https://design.avayacloud.com/license/">License</a>
-        <a className="footer-list-item privacy" target="_blank" href="https://www.avaya.com/en/privacy/commitment/">Privacy</a>
-        <a className="footer-list-item trademarks" target="_blank" href="https://www.avaya.com/en/trademarks/">Trademarks</a>
-        <a className="footer-list-item accessibility" target="_blank" href="https://www.avaya.com/en/accessibility/">Accessibility</a>
-        <a className="footer-list-item careers" target="_blank" href="https://careers.avaya.com/">Careers</a>
-        <a className="footer-list-item newsletter" target="_blank" href="https://design.avaya.com/subscribe/">Newsletter</a>
+        <a className="footer-list-item terms" target="_blank" rel="noreferrer" href="https://www.avaya.com/en/termsofuse/">Terms of Use</a>
+        <a className="footer-list-item license" target="_blank" rel="noreferrer" href="https://design.avayacloud.com/license/">License</a>
+        <a className="footer-list-item privacy" target="_blank" rel="noreferrer" href="https://www.avaya.com/en/privacy/commitment/">Privacy</a>
+        <a className="footer-list-item trademarks" target="_blank" rel="noreferrer" href="https://www.avaya.com/en/trademarks/">Trademarks</a>
+        <a className="footer-list-item accessibility" target="_blank" rel="noreferrer" href="https://www.avaya.com/en/accessibility/">Accessibility</a>
+        <a className="footer-list-item careers" target="_blank" rel="noreferrer" href="https://careers.avaya.com/">Careers</a>
+        <a className="footer-list-item newsletter" target="_blank" rel="noreferrer" href="https://design.avaya.com/subscribe/">Newsletter</a>
       </ul>
       <p className="footer-copyright">© 2022 Avaya, Inc.</p>
     </footer>

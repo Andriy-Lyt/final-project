@@ -56,12 +56,7 @@ function Login({setUsername, setRoom, joinRoom}) {
               <input type="button" value="Level 2 Support" className={"level-btn " + btn2Color} style={{cursor: "pointer"}}
               onClick={(e) => onRoomBtnClick(e, 2)} />
             </div>
-
-<<<<<<< HEAD
           <button type="submit" id="join-btn" className="btn-green">Start Chat</button>
-=======
-          <button type="submit" id="join-btn" className="btn-green">Join a Room</button>
->>>>>>> andy2
         </form>
     </div>
   )
