@@ -3,22 +3,20 @@
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--dblue);
-}
-
 /* Helpers -- */
 .w100 {width: 100%;}
 
 /* Form General */
 input {
-  padding: 2px;
+  padding: 3px;
   border-radius: 3px;
   border: 1px solid grey;
   outline:none;
 }
 input:focus {
-  border: 1px solid var(--mblue);
+  box-shadow: 0 0 1px 1px var(--mblue);
+  padding: 3px;
+  border:none;
   outline:none;
 }
 /* Button General */

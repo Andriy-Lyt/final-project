@@ -1,10 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './../styles/Chat.css';
 
 function Chat({socket, username, setUsername, userEmail, setUserEmail, room, setRoom, setShowChat, isOpen, setIsOpen}) {
   const [currentMessage, setCurrentMessage] = useState("");
-  const [messageList, setMessageList] = useState([]);
+  const [messageList, setMessageList] = useState(localStorage.getItem("messageList") ? JSON.parse(localStorage.getItem("messageList")) : []);
   const [formError, setFormError] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("messageList", JSON.stringify(messageList));
+  }, [messageList]);
 
   const logoutUser = () => {
       localStorage.setItem('room', ''); 
@@ -15,10 +19,10 @@ function Chat({socket, username, setUsername, userEmail, setUserEmail, room, set
       setUserEmail('');
       setShowChat('');
       setIsOpen(!isOpen);
+      localStorage.setItem("messageList", []);
   }
 
   const sendMessage = async (e) => {
-    // console.log(currentMessage);
     e.preventDefault();
     if (currentMessage !== '') {     
       const hours =  new Date(Date.now()).getHours();
@@ -53,42 +57,75 @@ function Chat({socket, username, setUsername, userEmail, setUserEmail, room, set
     });
   }, [socket]);
 
+  const lastMesRef = useRef(null);
+
+  useEffect(() => {
+    lastMesRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [currentMessage]);
+
   return (
     <section className="chat-container">
-
+        {/* Logout Button */}
         <button type="text" className="btn-red logout-btn" onClick={logoutUser} >
              Logout
         </button>
 
+      {/* Chat Header */}
       <div className="chat-header">
-          <h4>Hi {username ? username : "Guest"}!</h4> 
+          <h4 className="h4">Hi {username ? username : "Guest"}!</h4> 
           <p>Welcome to our support system.</p>
-          
+          <p>Please feel free to ask a question or to search our knowledge base.</p>
       </div>
 
+      {/* Display Chat messages */}
       <div className="chat-body">
+
         {messageList.map((mes, i) => {
            return (
-             <div key={i} className="message-div" data-id={username === mes.user ? "support" : "client"} >
+             <div ref={lastMesRef} key={i} className="message-div" data-id={username === mes.user ? "support" : "client"} >
                <p className="message-time">{mes.time}, {mes.user} says:</p>
-               {/* <p className="message-user">{mes.user} says:</p> */}
                <p className="message-text">{mes.message}</p>
              </div>
            ) 
-        }
+          }
         )}
       </div>
 
+      {/* Send Chat Messages */}
       <div className="form-container">
        {formError && <div className="error"> {formError} </div>}
         <form className="chat-form" onSubmit={sendMessage}>        
-          <textarea rows="2" maxLength="500" placeholder="Type your message.." 
+          <textarea maxLength="500" placeholder="Type your message.." 
           onChange={(event) => {setCurrentMessage(event.target.value.trim()); setFormError(''); }}
           onKeyPress={onKeyPress}>
           </textarea>
-          <button type="submit" className="btn-green"> &#9658; </button>
+          <button type="submit" className="btn-green mes-send-btn"> &#9658; </button>
         </form>
     </div>
+
+    {/* Search Knowledge Base */}
+    <div className="KB-div">
+      <h4 className="h4">Knowledge Base</h4>
+      <form className="search-form">
+        <div className="search-input-div">
+          <input type="text" placeholder="Search.." />
+          <button type="submit" className="btn-green search-btn"><i className="fa fa-search"></i></button>
+        </div>
+      </form>
+    </div>
+
+    <div className="search-results-container">
+      <h4 className="h4">Search Results</h4>
+      <div className="search-results-div">
+        <p><a href="" target="_blank" rel="noreferrer">Article 1</a></p> 
+        <p><a href="" target="_blank" rel="noreferrer">Article 2</a></p> 
+         <p><a href="" target="_blank" rel="noreferrer">Article 3</a></p> 
+        <p><a href="" target="_blank" rel="noreferrer">Article 4</a></p> 
+        <p><a href="" target="_blank" rel="noreferrer">Article 5</a></p>  
+      </div>
+    </div>
+
+
   </section>
 )
 }
