@@ -159,6 +159,7 @@
 
 /* Knowledge Base -------- */
 .KB-div {
+  border-top-style: ridge;
   margin-top: 1px;
   padding: 5px;
 }
