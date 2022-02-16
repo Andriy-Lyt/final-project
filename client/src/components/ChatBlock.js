@@ -11,7 +11,7 @@ function ChatBlock({username, setUsername, setRoom, joinRoom, socket, userEmail,
   const toggleOpen = () => setIsOpen(!isOpen);
 
   const chatStyle = {
-    height: isOpen ? "400px" : "0",
+    height: isOpen ? "650px" : "0",
     width: isOpen ? "350px" : "0",
     opacity: isOpen ? "1" : "0.7",
     boxShadow: isOpen ? "0 0 0px 1px var(--mblue), 0 0 0px 3px rgba(240, 241, 243, 0.8)" : "none"
