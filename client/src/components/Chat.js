@@ -10,18 +10,6 @@ function Chat({socket, username, setUsername, userEmail, setUserEmail, room, set
     localStorage.setItem("messageList", JSON.stringify(messageList));
   }, [messageList]);
 
-  const logoutUser = () => {
-      localStorage.setItem('room', ''); 
-      setRoom('');
-      localStorage.setItem('username', '');
-      setUsername('');
-      localStorage.setItem('useremail', '');
-      setUserEmail('');
-      setShowChat('');
-      setIsOpen(!isOpen);
-      localStorage.setItem("messageList", []);
-  }
-
   const sendMessage = async (e) => {
     e.preventDefault();
     if (currentMessage !== '') {     

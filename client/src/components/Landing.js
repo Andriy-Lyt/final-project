@@ -1,15 +1,7 @@
-import React, {useState} from 'react';
-import Chat from './Chat';
-import Login from './Login';
+import React, {} from 'react';
 import './../styles/Chat.css';
-import Bubble from './Bubble';
 
 function Landing({joinRoom}) {
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleOpen = () => setIsOpen(!isOpen);
-
   const chatStyle = {
     height:"650px",
     width:"350px",
