@@ -1,18 +1,18 @@
 const express = require('express');
 const app = express();
 const http = require("http");
-const cors = require("cors");
+// const cors = require("cors");
 const {Server} = require("socket.io");
 
-app.use(cors());
+// app.use(cors());
 
 const server = http.createServer(app);
-const io = new Server(server , {
+const io = new Server(server /* , {
   cors: {
     origin: "http://localhost:3000",
     methods: ["GET", "POST"]
   }
-});
+} */);
 
 io.on("connection", (socket) => {
   console.log("user connected", socket.id);
@@ -32,6 +32,10 @@ io.on("connection", (socket) => {
 });
 
 const port = process.env.PORT || 3001;
+
+app.get('/', (req, res) => {
+  res.send('server is running on port ' + port);
+})
 
 server.listen(port, () => {
   console.log("Server is up on port " + port);

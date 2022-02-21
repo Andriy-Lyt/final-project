@@ -4,7 +4,7 @@ import ChatBlock from './ChatBlock';
 import HomePage from './HomePage';
 import './../styles/App.css';
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("https://plan-bubble.herokuapp.com");
 
 function App() {
   const[username, setUsername] = useState(localStorage.getItem('username') || '');
