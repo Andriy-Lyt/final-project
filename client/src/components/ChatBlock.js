@@ -3,12 +3,14 @@ import Chat from './Chat';
 import Login from './Login';
 import './../styles/Chat.css';
 import Buble from './Bubble';
+import Landing from './Landing';
 
 function ChatBlock({username, setUsername, setRoom, joinRoom, socket, userEmail, setUserEmail, room, showChat, setShowChat}) {
 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => setIsOpen(!isOpen);
+  const toggleShowChat = () => setShowChat(!showChat);
 
   const chatStyle = {
     height: isOpen ? "650px" : "0",
@@ -29,19 +31,27 @@ function ChatBlock({username, setUsername, setRoom, joinRoom, socket, userEmail,
          
        {/* Fold down chat button */}
       <div className="close-chat-icon" onClick={toggleOpen}>&#x2014;</div>   
+      {(showChat && isOpen) && <div className="back-icon fa fa-arrow-left" onClick={toggleShowChat}></div> }
       
       {(!showChat && isOpen) &&
-      <Login  
-        setUsername={setUsername}
-        setUserEmail={setUserEmail}
-        setRoom={setRoom}
-        joinRoom={joinRoom}
+      <Landing
+      socket={socket} 
+      username={"You"} 
+      userEmail={userEmail}
+      setUsername={setUsername}
+      setUserEmail={setUserEmail}
+      room={room} 
+      setRoom={setRoom}
+      setShowChat={setShowChat}
+      setIsOpen={setIsOpen}
+      isOpen={isOpen}
+      joinRoom={joinRoom}
       /> }
 
       {(showChat && isOpen) &&
       <Chat
         socket={socket} 
-        username={username} 
+        username={"You"} 
         userEmail={userEmail}
         setUsername={setUsername}
         setUserEmail={setUserEmail}
