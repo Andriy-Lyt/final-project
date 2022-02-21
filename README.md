@@ -23,10 +23,10 @@ Agent Bubbles was created as the final project for Lighthouse labs full-stack We
 
 ## Dependencies
 
-- react: "^17.0.2"
-- react-dom: "^17.0.2"
-- react-scripts: "5.0.0"
-- socket.io-client: "^4.4.1"
+- react: 17.0.2
+- react-dom: 17.0.2
+- react-scripts: 5.0.0
+- socket.io-client: 4.4.1
 - normalise.css
 
 ## Screenshots
