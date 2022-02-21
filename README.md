@@ -26,12 +26,6 @@ Agent Bubbles is an add-on that can be deployed on top of an existing app to pro
 - react-scripts
 - normalise.css
 
-## Running Webpack Development Server
-
-```sh
-npm run dev
-```
-
 ## Screenshots
 ![ index_page ](docs/index_page.png)
 ![ chat_index ](docs/)
