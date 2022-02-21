@@ -33,7 +33,7 @@ npm run dev
 ```
 
 ## Screenshots
-![ index_page ](docs/)
+![ index_page ](docs/index_page.png)
 ![ chat_index ](docs/)
 ![ chat_window ](docs/)
 ![ KBs ](docs/)
