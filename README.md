@@ -2,6 +2,8 @@
 
 Agent Bubbles is an add-on that can be deployed on top of an existing app to provide assistance to users via chat functionality; Agent Bubbles connects the user to a live agent who can provide assistance in realtime.
 
+Agent Bubbles was created as the final project for Lighthouse labs full-stack Web Development course;
+
 ## Project brief
 
  Agent Bubbles is built using React and utilizes React features such as built-in and custom hooks;
