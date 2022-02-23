@@ -5,7 +5,7 @@ import './../styles/Chat.css';
 import Buble from './Bubble';
 import Landing from './Landing';
 
-function ChatBlock({username, setUsername, setRoom, joinRoom, socket, userEmail, setUserEmail, room, showChat, setShowChat}) {
+function ChatBlock({ setRoom, joinRoom, socket, userEmail, setUserEmail, room, showChat, setShowChat}) {
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,9 +37,9 @@ function ChatBlock({username, setUsername, setRoom, joinRoom, socket, userEmail,
       <Landing
       socket={socket} 
       username={"You"} 
-      userEmail={userEmail}
-      setUsername={setUsername}
-      setUserEmail={setUserEmail}
+      // userEmail={userEmail}
+      // setUsername={setUsername}
+      // setUserEmail={setUserEmail}
       room={room} 
       setRoom={setRoom}
       setShowChat={setShowChat}
@@ -52,9 +52,9 @@ function ChatBlock({username, setUsername, setRoom, joinRoom, socket, userEmail,
       <Chat
         socket={socket} 
         username={"You"} 
-        userEmail={userEmail}
-        setUsername={setUsername}
-        setUserEmail={setUserEmail}
+        // userEmail={userEmail}
+        // setUsername={setUsername}
+        // setUserEmail={setUserEmail}
         room={room} 
         setRoom={setRoom}
         setShowChat={setShowChat}
